@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    #sns .card{
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, .5)rgba(0, 0, 0, .5);
+        padding: 20px;
+        border-radius: 5px;
+        transition: box-shadow .5s;
+    }
+
+    #sns .card:hover{
+        box-shadow: 1px 1px 30px rgba(0, 0, 0, .5);
+    }
+
+    #sns .card p{
+        margin: 10px 0 0 0;
+    }
+    #sns .card .card_content h2{
+        font-size: small;
+    }
+    #sns .card .card_content>img{
+        width:50%;
+        margin-top: 15px;
+    }
+</style>
+<body>
+    <h2>은결이의 sns</h2>
+    <section id="sns">
+        <article class="card">
+            <div class="card_content">
+                <h3>글린이리</h3>
+                <p>이 꽉물어라잉</p>
+                <img src="icon_12 (1).png">
+            </div>
+        </article>
+    </section>
+
+    <div class="comment">
+        <div id="timeline">
+            <div class="container">
+                <p>댓글</p>
+                <textarea name="" id="postInput" cols="55" rows="3"></textarea>
+                <button onclick="snsPost()">작성</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timeline = document.querySelector('#timeline');
+    
+        function snsPost() {
+            const postValue = document.querySelector('#postInput').value
+            console.log(postValue);
+            timeline.innerHTML += '<div id = "timeline">'+
+                    '<div class="container">'+
+                    '<h5>yunkyul</h5>'+
+                    '<div class="fakeimg">'+'<p>'+postValue+'</p>'+'</div>'+
+                    '</div>'+
+                    '</div>';
+        }
+    
+    </script>
+</body>
+</html>
